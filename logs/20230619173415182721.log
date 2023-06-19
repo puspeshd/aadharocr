@@ -1,0 +1,41 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.10:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:FILE RECIEVED TO API
+INFO:root:<FileStorage: 'name.jpeg' ('image/jpeg')> THIS IS TO BE RETURNED TO OCR 
+INFO:root:<FileStorage: 'name.jpeg' ('image/jpeg')>
+ERROR:progmain with logging:Exception on /test/results [POST]
+Traceback (most recent call last):
+  File "e:\PROJECTS\1UPWORK\newapp\progmain with logging.py", line 654, in mainfunc
+    cv2.imwrite("images"+current_time+".jpg",image_path)
+cv2.error: OpenCV(4.7.0) :-1: error: (-5:Bad argument) in function 'imwrite'
+> Overload resolution failed:
+>  - img is not a numpy array, neither a scalar
+>  - Expected Ptr<cv::UMat> for argument 'img'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Puspesh Deolal\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Puspesh Deolal\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Puspesh Deolal\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Puspesh Deolal\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Puspesh Deolal\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\PROJECTS\1UPWORK\newapp\progmain with logging.py", line 662, in mainfunc
+    image_path[3].save("images/"+current_time+".jpg")
+    ~~~~~~~~~~^^^
+TypeError: 'FileStorage' object is not subscriptable
+INFO:werkzeug:192.168.1.10 - - [19/Jun/2023 17:34:19] "[35m[1mPOST /test/results HTTP/1.1[0m" 500 -

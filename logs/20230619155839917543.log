@@ -1,0 +1,13 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.10:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:FILE RECIEVED TO API
+INFO:root:<FileStorage: 'name.jpeg' ('image/jpeg')> THIS IS TO BE RETURNED TO OCR 
+INFO:root: jpg orig IMAGE SAVED TO SERVER
+INFO:root:b"[HOM, 8, Date: 08122016,    , Unique Identification Authority of India,     Enrollment No.: 2821 42107 02084, 107264209, To,  , Government of India, , , Yashwarthan Lohra, CO: Yogesh Krishna Lalva., 1806. Woodstock, Rodas Enclave Hranandani ECB Road, VTC Tha, PO. Sandazbeugh, Sub, State Maharashtra, PIN Code: 400607., Mobile: 9310546301, MIGO72642097F1, District Thane, District Thane,,      Your Aadhaar No.:, 8616 8006 2346,    ,  , Goverment of India, , Yashwardhan Lohra,   DOB 18 09 2011,    Mae, 8616 8006 2346,    ]":::: FORMATTED STRING FROM GOOGLE OCR 
+ERROR:root:{'Name': '', 'DOB': '', 'GENDER': '', 'AADHAR NO': '', 'Flag': '', 'House no': '', 'Building_name': '', 'locality': '', 'street': '', 'city': '', 'state': '', 'country': '', 'PIN': '', 'LATITUDE': '', 'LONGITUDE': '', 'status_code': 2, 'error_msg': "DIDN'T RECOGNIZE ,PLEASE PROCEED MANUALLY OR UPLOAD AGAIN"}'builtin_function_or_method' object has no attribute 'replace':::: ERROR AADHAR STRIP
+INFO:root:AADHAR FULL FUNCTION CALLED
+INFO:root:{'Name': '', 'DOB': '', 'GENDER': '', 'AADHAR NO': '', 'Flag': '', 'House no': '', 'Building_name': '', 'locality': '', 'street': '', 'city': '', 'state': '', 'country': '', 'PIN': '', 'LATITUDE': '', 'LONGITUDE': '', 'status_code': 2, 'error_msg': "DIDN'T RECOGNIZE ,PLEASE PROCEED MANUALLY OR UPLOAD AGAIN", 'file_name': '20230619155928114865.jpg'}:::::::::: FINAL RESULTS 
+INFO:werkzeug:192.168.1.10 - - [19/Jun/2023 15:59:28] "POST /test/results HTTP/1.1" 200 -
