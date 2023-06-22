@@ -1,0 +1,48 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.10:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:FILE RECIEVED TO API
+INFO:root:<FileStorage: 'new ac.jpeg.jpg' ('image/jpeg')> THIS IS TO BE RETURNED TO OCR 
+INFO:root:<FileStorage: 'new ac.jpeg.jpg' ('image/jpeg')>
+INFO:root: jpg orig IMAGE SAVED TO SERVER
+INFO:root:b"[Issue Date: 26 10 2013, FAR, HOW,  ,  ,  , Government of India,    , Unique Identification Authority of India, Enrolment No.: 2821 27044 03052, E, To, Kirti Nandkumar Shegar, D O: Nandkumar Shegar, b-1 1, muncipal sttaf colony, building a   1,, s g barve marg, kamgar nagar, kurla east, Mumbai, Mumbai Maharashtra - 400024, 8104653852, Signature valid, Datalysed, UNIQUE ENCATION, AUTHOR NOAS, Date 20272434, UTC, ,      Your Aadhaar No. :, 5036 1281 4358, VID: 9102959535367495,  ,  ,  , _Government of India, Kirti Nandkumar Shegar, Date of Birth   DOB: 14 07 1987, Female,   FEMALE, 5036 1281 4358, VID: 9102959535367495,  ,  , , E-,  , Government of,  ,  ,  ,  ,  , , , ,   ,  ,  ,  ,  , ,    , ,  ,  , Aadh, Aadh, Verif, XML , All for, eAad, Aadh, digit A, Upda, Aadh, Non-, Keep, Aadh, Down, Aadh, Use t, ensur, Entiti, conse, Address:, D O: Nandkum, sttaf colony, bu, kamgar nagar,, Maharashtra -, 1947]":::: FORMATTED STRING FROM GOOGLE OCR 
+INFO:root:LIST AFTER TO [' Kirti Nandkumar Shegar', ' D O: Nandkumar Shegar', ' b-1 1', ' muncipal sttaf colony', ' building a   1', '', ' s g barve marg', ' kamgar nagar', ' kurla east', ' Mumbai', ' Mumbai Maharashtra - 400024', ' 8104653852', ' Signature valid', ' Datalysed', ' UNIQUE ENCATION', ' AUTHOR NOAS', ' Date 20272434', ' UTC', ' ', '      Your Aadhaar No. :', ' 5036 1281 4358', ' VID: 9102959535367495', '  ', '  ', '  ', ' _Government of India', ' Kirti Nandkumar Shegar', ' Date of Birth   DOB: 14 07 1987', ' Female', '   FEMALE', ' 5036 1281 4358', ' VID: 9102959535367495', '  ', '  ', ' ', ' E-', '  ', ' Government of', '  ', '  ', '  ', '  ', '  ', ' ', ' ', ' ', '   ', '  ', '  ', '  ', '  ', ' ', '    ', ' ', '  ', '  ', ' Aadh', ' Aadh', ' Verif', ' XML ', ' All for', ' eAad', ' Aadh', ' digit A', ' Upda', ' Aadh', ' Non-', ' Keep', ' Aadh', ' Down', ' Aadh', ' Use t', ' ensur', ' Entiti', ' conse', ' Address:', ' D O: Nandkum', ' sttaf colony', ' bu', ' kamgar nagar', '', ' Maharashtra -', ' 1947]"']
+INFO:root:LIST after SO check [' b-1 1', ' muncipal sttaf colony', ' building a   1', '', ' s g barve marg', ' kamgar nagar', ' kurla east', ' Mumbai', ' Mumbai Maharashtra - 400024', ' 8104653852', ' Signature valid', ' Datalysed', ' UNIQUE ENCATION', ' AUTHOR NOAS', ' Date 20272434', ' UTC', ' ', '      Your Aadhaar No. :', ' 5036 1281 4358', ' VID: 9102959535367495', '  ', '  ', '  ', ' _Government of India', ' Kirti Nandkumar Shegar', ' Date of Birth   DOB: 14 07 1987', ' Female', '   FEMALE', ' 5036 1281 4358', ' VID: 9102959535367495', '  ', '  ', ' ', ' E-', '  ', ' Government of', '  ', '  ', '  ', '  ', '  ', ' ', ' ', ' ', '   ', '  ', '  ', '  ', '  ', ' ', '    ', ' ', '  ', '  ', ' Aadh', ' Aadh', ' Verif', ' XML ', ' All for', ' eAad', ' Aadh', ' digit A', ' Upda', ' Aadh', ' Non-', ' Keep', ' Aadh', ' Down', ' Aadh', ' Use t', ' ensur', ' Entiti', ' conse', ' Address:', ' D O: Nandkum', ' sttaf colony', ' bu', ' kamgar nagar', '', ' Maharashtra -', ' 1947]"']
+INFO:root:LIST BEFORE FINDING PIN CODE [' b-1 1', ' muncipal sttaf colony', ' building a   1', ' s g barve marg', ' kamgar nagar', ' kurla east', ' Mumbai', ' Mumbai Maharashtra - 400024', ' 8104653852', ' Signature valid', ' Datalysed', ' UNIQUE ENCATION', ' AUTHOR NOAS', ' Date 20272434', '      Your Aadhaar No. :', ' Date of Birth   DOB: 14 07 1987', ' Female', '   FEMALE', ' Government of', ' Aadh', ' Aadh', ' Verif', ' XML ', ' All for', ' eAad', ' Aadh', ' digit A', ' Upda', ' Aadh', ' Non-', ' Keep', ' Aadh', ' Down', ' Aadh', ' Use t', ' ensur', ' Entiti', ' conse', ' Address:', ' D O: Nandkum', ' sttaf colony', ' kamgar nagar', ' Maharashtra -']
+INFO:root:LIST AFTER FINDING PIN CODE [' b-1 1', ' muncipal sttaf colony', ' building a   1', ' s g barve marg', ' kamgar nagar', ' kurla east', ' Mumbai']
+INFO:root:SENT TO GOOGLE API : [' b-1 1', ' muncipal sttaf colony', ' building a   1', ' s g barve marg', ' kamgar nagar', ' kurla east', ' Mumbai'], Mumbai Maharashtra - 400024,PINCODE FROM AADHAR
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://maps.googleapis.com:443 "GET /maps/api/geocode/json?address=%5B%27+b-1+1%27%2C+%27+muncipal+sttaf+colony%27%2C+%27+building+a+++1%27%2C+%27+s+g+barve+marg%27%2C+%27+kamgar+nagar%27%2C+%27+kurla+east%27%2C+%27+Mumbai%27%5D+Mumbai+Maharashtra+-+400024&key=AIzaSyDISrKu3mOEE100DwCDUvNsTeCssciGh4o HTTP/1.1" 200 5424
+INFO:root:RESPONSE FROM GOOGLE API  ['building a', ' 1', ' SG Barve Marg', ' Kamgaar Nagar', ' Kurla', ' Mumbai', ' Maharashtra 400024', ' India']
+INFO:root:RUNNING BEFORE PINCODE OPERATION
+INFO:root:RUNNING AFTER PINCODE OPERATION
+INFO:root:LIST FOR PACK [' muncipal sttaf colony', ' building a   1', ' s g barve marg', ' kamgar nagar', ' kurla east']
+INFO:root:{'Name': ' Kirti Nandkumar Shegar', 'DOB': ' Date of Birth    14 07 1987', 'GENDER': ' Female', 'AADHAR NO': ' 5036 1281 4358', 'Flag': 'VERIFIED FROM GOOGLE MAPS API', 'House no': ' b-1 1', 'Building_name': ' muncipal sttaf colony', 'locality': ' kamgar nagar kurla east', 'street': ' building a   1 s g barve marg', 'city': ' Mumbai', 'state': 'Maharashtra', 'country': ' India', 'PIN': '400024', 'LATITUDE': '19.063101', 'LONGITUDE': '72.88838799999999', 'status_code': 1, 'status_message': 'Success'}:::: SUCCESS RESPONSE
+INFO:root:AADHAR FULL FUNCTION CALLED
+ERROR:progmain with logging:Exception on /test/results [POST]
+Traceback (most recent call last):
+  File "C:\Users\Puspesh Deolal\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Puspesh Deolal\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Puspesh Deolal\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Puspesh Deolal\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Puspesh Deolal\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\PROJECTS\1UPWORK\newapp\progmain with logging.py", line 726, in mainfunc
+    fileresize(current_time)
+  File "e:\PROJECTS\1UPWORK\newapp\progmain with logging.py", line 618, in fileresize
+    img=cv2.resize(img,(w*(70//100),h*(70//100)))
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.7.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\resize.cpp:4065: error: (-215:Assertion failed) inv_scale_x > 0 in function 'cv::resize'
+
+INFO:werkzeug:192.168.1.10 - - [21/Jun/2023 20:01:37] "[35m[1mPOST /test/results HTTP/1.1[0m" 500 -

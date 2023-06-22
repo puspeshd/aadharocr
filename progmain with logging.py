@@ -11,7 +11,6 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] ='chetan.json'
 from google.cloud import vision
 vision_client = vision.ImageAnnotatorClient()
 import datetime
-import numpy
 import logging
 
 	
@@ -50,7 +49,7 @@ def photoupd():
              doc=fitz.open(name)
              for i in range(doc.page_count):
                  page=doc[i]
-                 image_path=page.get_pixmap()
+                 image_path=page.get_pixmap(dpi=200)
                  print(image_path," **********")
                  name=name.replace(".pdf",".jpg")
                  image_path.save(name)
@@ -609,7 +608,24 @@ def mainfunc():
             dictfinal = {"Name": '', "DOB": '',"GENDER": '', "AADHAR NO": '',"Flag": '' ,"House no": '', "Building_name": '', "locality": '', "street": '', "city": '', "state": '', "country": '', "PIN": '', "LATITUDE": '', "LONGITUDE": '',"status_code":2,"error_msg":"DIDN'T RECOGNIZE ,PLEASE PROCEED MANUALLY OR UPLOAD AGAIN"}
             logging.error(f"{str(dictfinal)}{e}:::: ERROR AADHAR STRIP")
         return (dictfinal)
-    
+    def fileresize(time):
+        img=cv2.imread("images/"+time+".jpg")
+        logging.info(f"{time}")
+        size=os.path.getsize("images/"+time+".jpg")/1024
+        h,w,_=img.shape
+        if(size>100 and size<200):
+         img=cv2.resize(img,(w*53//100,h*53//100))
+        elif(size>200 and size<500):
+         img=cv2.resize(img,(w*50//100,h*50//100))  
+        elif(size>500 and size<700):
+            img=cv2.resize(img,(w*40//100,h*40//100))
+        elif(size>700 and size<1000):
+            img=cv2.resize(img,(w*30//100,h*30//100))
+        elif(size>1000 and size<2000):    
+         img=cv2.resize(img,(w*20//100,h*20//100))                       
+        elif(size>2000):    
+         img=cv2.resize(img,(w*10//100,h*10//100))   
+        cv2.imwrite("images/"+time+".jpg",img)  
     
     if(type(image_path)!=list):
       #print(,"HEEEEEEEEE")
@@ -708,6 +724,10 @@ def mainfunc():
     else:
         results={"status_message":"UNIDENTIFIED DOCUMENT"}    
         logging.error("DOCUMENT IS UNIDENTIFIED")
+    try:    
+        fileresize(current_time)
+    except Exception as e:
+        logging.info(f"{e}:::: THIS IS THE EXCEPTION FOR FILE RESIZE")
     
     current_time=current_time+".jpg"    
     file_name={"file_name":current_time}
