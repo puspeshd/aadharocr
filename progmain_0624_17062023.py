@@ -155,12 +155,12 @@ def mainfunc():
                             finallist[0][3]=ano                
             dictfinal = {"Name": finallist[0][0], "DOB": finallist[0][1],
                          "GENDER": finallist[0][2], "AADHAR NO": finallist[0][3],"error_code":1,"error_message":"SUCCESS"}
-            
+            logging.info(f"{str(dictfinal)} ::: AADHAR FRONT SUCCESSFUL")
             
         except:
             dictfinal = {"Name": '', "DOB": '',
                          "GENDER": '', "AADHAR NO": '',"error_code":2,"error_msg":"DIDN'T RECOGNIZE ,PLEASE PROCEED MANUALLY OR UPLOAD AGAIN"}
-        #logfile.write("\n"+str(dictfinal)+" THIS IS FINAL AADHAR FRONT RESULT")
+            
         return (dictfinal)
 
     def aadharcardb(strdf):
@@ -682,7 +682,7 @@ def mainfunc():
     #logfile.write("\n"+str(results)+"::::::::::::::: FINAL RESPONSE")
     ###logfile.close()
     
- 
+
     ##logfile.close()
     return results     
     
