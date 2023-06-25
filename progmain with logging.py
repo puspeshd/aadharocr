@@ -349,11 +349,57 @@ def mainfunc():
                 locality = listdf[5]+listdf[6]+listdf[7]+listdf[8]
                 street = listdf[1]+listdf[2]+listdf[3]+listdf[4]
                 buildingname = listdf[0]
-            
-            #print(temppincode)
-           
-            #print(listdf)
-            #print(addgoogle ,"TJIS IS GOOGLE ADDRESS")
+            if(len(locality)>39  or  len(street)>39  or len(buildingname)>39):
+                
+                    if (xxx == 6):
+                        locality = listdf[4]+listdf[5]
+                        street = listdf[2]+listdf[3]
+                        buildingname = listdf[0]+listdf[1]
+                    elif (xxx == 7):
+                        locality = listdf[5]+listdf[6]
+                        street = listdf[2]+listdf[3]+listdf[4]
+                        buildingname = listdf[0]+listdf[1]
+                    elif (xxx == 8):
+                        locality = listdf[6]+listdf[7]
+                        street = listdf[3]+listdf[4]+listdf[5]
+                        buildingname = listdf[0]+listdf[1]+listdf[2]
+                    elif (xxx == 9):
+                        locality = listdf[7]+listdf[8]
+                        street = listdf[4]+listdf[5]+listdf[6]
+                        buildingname = listdf[0]+listdf[1]+listdf[2]+listdf[3]
+            if(len(buildingname)>39 or len(street)>39 or len(locality)>39):
+                    logging.info("SECOND PASS")
+                    if (xxx == 6):
+                        locality = listdf[5]
+                        street = listdf[4]
+                        buildingname = listdf[2]+listdf[3]
+                        houseno=houseno+listdf[0]+listdf[1]
+                    elif (xxx == 7):
+                        locality = listdf[6]
+                        street = listdf[4]+listdf[5]
+                        buildingname = listdf[2]+listdf[3]
+                        houseno=houseno+listdf[0]+listdf[1]
+                    elif (xxx == 8):
+                        locality = listdf[6]+listdf[7]
+                        street = listdf[4]+listdf[5]
+                        buildingname = listdf[2]+listdf[3]
+                        houseno=houseno+listdf[0]+listdf[1]
+                    elif (xxx == 9):
+                        locality = listdf[7]+listdf[8]
+                        street = listdf[5]+listdf[6]
+                        buildingname = listdf[3]+listdf[4]
+                        houseno=houseno+listdf[0]+listdf[1]+listdf[2]
+            if(len(houseno)>39 or len(buildingname)>39 or len(locality)>39 or len(street)>39):
+                houseno=list(houseno[:39])
+                houseno="".join(houseno)
+                buildingname=list(buildingname[:39])
+                buildingname="".join(buildingname)
+                locality=list(locality[:39])
+                locality="".join(locality)
+                street=list(street[:39])
+                street="".join(street)
+                        
+            logging.info(f"{len(houseno)}:::HOUSE NO {len(buildingname)}:::BUILDING {len(locality)}:::::LOCALITY {len(street)}::::: STREET")       
             
             addfinal = {"Flag": flag, "House_no": houseno, "Building_name": buildingname, "locality": locality, "street": street,
                         "city": city, "state": state, "country": country, "PIN": pincode, "LATITUDE": latgoogle, "LONGITUDE": lnggoogle,"status_code":1,"status_message":"SUCCESS"}
@@ -586,9 +632,59 @@ def mainfunc():
                 locality = listdf[5]+listdf[6]+listdf[7]+listdf[8]
                 street = listdf[1]+listdf[2]+listdf[3]+listdf[4]
                 buildingname = listdf[0]
-            
+            if(len(locality)>39  or  len(street)>39  or len(buildingname)>39):
+                
+                    if (xxx == 6):
+                        locality = listdf[4]+listdf[5]
+                        street = listdf[2]+listdf[3]
+                        buildingname = listdf[0]+listdf[1]
+                    elif (xxx == 7):
+                        locality = listdf[5]+listdf[6]
+                        street = listdf[2]+listdf[3]+listdf[4]
+                        buildingname = listdf[0]+listdf[1]
+                    elif (xxx == 8):
+                        locality = listdf[6]+listdf[7]
+                        street = listdf[3]+listdf[4]+listdf[5]
+                        buildingname = listdf[0]+listdf[1]+listdf[2]
+                    elif (xxx == 9):
+                        locality = listdf[7]+listdf[8]
+                        street = listdf[4]+listdf[5]+listdf[6]
+                        buildingname = listdf[0]+listdf[1]+listdf[2]+listdf[3]
+            if(len(buildingname)>39 or len(street)>39 or len(locality)>39):
+                    logging.info("SECOND PASS")
+                    if (xxx == 6):
+                        locality = listdf[5]
+                        street = listdf[4]
+                        buildingname = listdf[2]+listdf[3]
+                        houseno=houseno+listdf[0]+listdf[1]
+                    elif (xxx == 7):
+                        locality = listdf[6]
+                        street = listdf[4]+listdf[5]
+                        buildingname = listdf[2]+listdf[3]
+                        houseno=houseno+listdf[0]+listdf[1]
+                    elif (xxx == 8):
+                        locality = listdf[6]+listdf[7]
+                        street = listdf[4]+listdf[5]
+                        buildingname = listdf[2]+listdf[3]
+                        houseno=houseno+listdf[0]+listdf[1]
+                    elif (xxx == 9):
+                        locality = listdf[7]+listdf[8]
+                        street = listdf[5]+listdf[6]
+                        buildingname = listdf[3]+listdf[4]
+                        houseno=houseno+listdf[0]+listdf[1]+listdf[2]
+            if(len(houseno)>39 or len(buildingname)>39 or len(locality)>39 or len(street)>39):
+                logging.info("PASS #3")
+                houseno=list(houseno[:39])
+                houseno="".join(houseno)
+                buildingname=list(buildingname[:39])
+                buildingname="".join(buildingname)
+                locality=list(locality[:39])
+                locality="".join(locality)
+                street=list(street[:39])
+                street="".join(street)        
+            logging.info(f"{len(houseno)}:::HOUSE NO {len(buildingname)}:::BUILDING {len(locality)}:::::LOCALITY {len(street)}::::: STREET")       
             #print(temppincode)
-           
+            logging.info(f"{len(buildingname)} : BNAME {len(street)} : STREET {len(locality)} : LOCALITY ")
             #print(listdf)
             #print(addgoogle ,"TJIS IS GOOGLE ADDRESS")
             
@@ -614,18 +710,31 @@ def mainfunc():
         size=os.path.getsize("images/"+time+".jpg")/1024
         h,w,_=img.shape
         if(size>100 and size<200):
-         img=cv2.resize(img,(w*53//100,h*53//100))
+         img1=cv2.resize(img,(w*90//100,h*90//100))
         elif(size>200 and size<500):
-         img=cv2.resize(img,(w*50//100,h*50//100))  
+         img1=cv2.resize(img,(w*80//100,h*80//100))  
         elif(size>500 and size<700):
-            img=cv2.resize(img,(w*40//100,h*40//100))
+            img1=cv2.resize(img,(w*70//100,h*70//100))
         elif(size>700 and size<1000):
-            img=cv2.resize(img,(w*30//100,h*30//100))
+            img1=cv2.resize(img,(w*65//100,h*65//100))
         elif(size>1000 and size<2000):    
-         img=cv2.resize(img,(w*20//100,h*20//100))                       
+         img1=cv2.resize(img,(w*60//100,h*60//100))                       
         elif(size>2000):    
-         img=cv2.resize(img,(w*10//100,h*10//100))   
-        cv2.imwrite("images/"+time+".jpg",img)  
+         img1=cv2.resize(img,(w*50//100,h*50//100))   
+        cv2.imwrite("images/"+time+".jpg",img1)  
+        if(size>100 and size<200):
+         img2=cv2.resize(img,(w*70//100,h*70//100))
+        elif(size>200 and size<500):
+         img2=cv2.resize(img,(w*55//100,h*55//100))  
+        elif(size>500 and size<700):
+         img2=cv2.resize(img,(w*40//100,h*40//100))
+        elif(size>700 and size<1000):
+            img2=cv2.resize(img,(w*30//100,h*30//100))
+        elif(size>1000 and size<2000):    
+         img2=cv2.resize(img,(w*25//100,h*25//100))                       
+        elif(size>2000):    
+         img2=cv2.resize(img,(w*20//100,h*20//100))   
+        cv2.imwrite("images/"+"compressed_"+time+".jpg",img2)
     
     if(type(image_path)!=list):
       #print(,"HEEEEEEEEE")
@@ -713,6 +822,7 @@ def mainfunc():
 
     elif (strdf.find("Unique Identification Authority of India") > 1):
         results = aadharcardb(strdf)
+        
         logging.info("AADHAR BACK FUNCTION CALLED")
     elif (strdf.find("UNIQUE IDENTIFICATION AUTHORITY OF INDIA") > 1):
         results = aadharcardb(strdf)
